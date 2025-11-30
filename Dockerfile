@@ -1,5 +1,6 @@
 # Builder: build the fat jar
-FROM maven:3.8.8-openjdk-11-slim AS builder
+# Use a widely available Maven+JDK 11 tag (some specific tags may not exist on Docker Hub)
+FROM maven:3.8.8-jdk-11-slim AS builder
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
